@@ -1,4 +1,4 @@
 type Query {
   getOrg(id: ID!): Org!
-  getGroupWithOrgs(id: ID!, input: ID!): [Org!]!
+  getOrgs(query: QueryAll): [Org]!
 }

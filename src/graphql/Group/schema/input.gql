@@ -1,9 +1,8 @@
 input GroupCreateInput {
-  id: ID!
   name: String!
 }
 
 input UpdateGroupInput {
-  id: ID
+  id: ID!
   name: String
 }

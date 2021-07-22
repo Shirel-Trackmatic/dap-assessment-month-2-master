@@ -1,4 +1,4 @@
 type Mutation {
   createGroup(input: GroupCreateInput): Group!
-  updateGroup(id: ID!, input: UpdateGroupInput): Group!
+  updateGroup(input: UpdateGroupInput): Group!
 }

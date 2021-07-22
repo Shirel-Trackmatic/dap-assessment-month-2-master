@@ -9,4 +9,5 @@ module.exports = {
   updateRow: require("./updateRow"),
   getAllRows: require("./getAllRows"),
   getQuery: require("./getQuery"),
+  getRowsWithQuery: require("./getRowsWithQuery"),
 };

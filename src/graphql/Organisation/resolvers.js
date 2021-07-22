@@ -3,14 +3,14 @@ const { Organisation, Group, Site } = require("../../models");
 module.exports = {
   Query: {
     getOrg: (_, { id }) => Organisation.getOrg(id),
-    getGroupWithOrgs: (_, { input }) => Organisation.getGroupWithOrgs(input),
+    getOrgs: (_, { query }) => Organisation.getOrgs(query),
   },
   Mutation: {
     createOrg: (_, { input }) => Organisation.createOrg(input),
     updateOrg: (_, { input }) => Organisation.updateOrg(input),
   },
   Org: {
-    group: (org) => Group.getGroup(org.groupId),
-    sites: (org, { query }) => Site.getOrgWithSites(org.id, query),
+    Groups: (org) => Group.getGroup(org.groupId),
+    Sites: (org, { query }) => Site.getOrgWithSites(org.id, query),
   },
 };

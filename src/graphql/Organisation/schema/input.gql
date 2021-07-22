@@ -1,10 +1,9 @@
 input OrgCreateInput {
-  id: ID!
   name: String!
   groupId: ID!
 }
 
 input UpdateOrgInput {
-  id: ID
+  id: ID!
   name: String
 }

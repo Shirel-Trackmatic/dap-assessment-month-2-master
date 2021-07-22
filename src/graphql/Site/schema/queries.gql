@@ -1,5 +1,4 @@
 type Query {
   getSite(id: ID!): Site!
-  getAllSites: [Site!]!
-  getOrgWithSites(id: ID!, input: ID!): [Site!]!
+  getSites: [Site!]!
 }

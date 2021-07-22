@@ -1,14 +1,16 @@
-const { dissoc } = require("ramda");
-const getAllRows = require("../getAllRows");
+const {
+  Op: { like },
+} = require("sequelize");
+const { mergeAll } = require("ramda");
 
-const getQuery = async (model, where = {}, returning = true) => {
-  await model.findAll({
-    where,
-  });
-  if (returning) {
-    const response = await getAllRows(model, where);
-    return response;
-  }
-};
+const getQuery = (query = {}) => ({
+  ...mergeAll(
+    Object.keys(query).map((key) => ({
+      [key]: {
+        [like]: `%${query[key]}%`,
+      },
+    }))
+  ),
+});
 
 module.exports = getQuery;
